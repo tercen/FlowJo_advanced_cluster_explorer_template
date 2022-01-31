@@ -3,8 +3,8 @@
   "id": "e01b896d11a4d4031e3270648f637ebf",
   "isDeleted": false,
   "rev": "3-3d0014e92d91fd47faae23724695b85d",
-  "description": "Workflow template for FlowJo Tercen plugin uploaded files. FlowSOM  (cluster n=15)  view in a heatmap and MST. 2D plot with tSNE and UMAP . Downsampling applied (1%)  ",
-  "name": "Cluster explorer advanced FJ",
+  "description": "Performs FlowSOM (cluster n=15) and views the results with a heatmap and MST. 2D plot with tSNE and UMAP. Downsampling applied (1%)",
+  "name": "FlowJo Cluster Explorer #2 - Advanced",
   "createdBy": "maho.nagasawa",
   "acl": {
     "kind": "Acl",
