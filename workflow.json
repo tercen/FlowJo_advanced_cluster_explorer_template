@@ -2,7 +2,7 @@
   "kind": "Workflow",
   "id": "e01b896d11a4d4031e3270648f637ebf",
   "isDeleted": false,
-  "rev": "3-3d0014e92d91fd47faae23724695b85d",
+  "rev": "4-fe0635734feb712d20e356c2e1d7238e",
   "description": "Performs FlowSOM (cluster n=15) and views the results with a heatmap and MST. 2D plot with tSNE and UMAP. Downsampling applied (1%)",
   "name": "FlowJo Cluster Explorer #2 - Advanced",
   "createdBy": "maho.nagasawa",
@@ -17,7 +17,7 @@
   },
   "lastModifiedDate": {
     "kind": "Date",
-    "value": "2022-01-27T11:03:07.775100Z"
+    "value": "2022-02-02T15:57:27.905268Z"
   },
   "urls": [
     {
@@ -772,7 +772,7 @@
         "kind": "Rectangle",
         "extent": {
           "kind": "Point",
-          "x": 109.69784545898438,
+          "x": 109.69761657714844,
           "y": 55.0
         },
         "topLeft": {
@@ -1375,7 +1375,7 @@
         "kind": "Rectangle",
         "extent": {
           "kind": "Point",
-          "x": 102.69789123535156,
+          "x": 102.6976318359375,
           "y": 55.0
         },
         "topLeft": {
@@ -1934,7 +1934,7 @@
         "kind": "Rectangle",
         "extent": {
           "kind": "Point",
-          "x": 115.81584167480469,
+          "x": 115.81562805175781,
           "y": 55.0
         },
         "topLeft": {
@@ -2201,7 +2201,7 @@
         "kind": "Rectangle",
         "extent": {
           "kind": "Point",
-          "x": 121.91984558105469,
+          "x": 121.91960144042969,
           "y": 55.0
         },
         "topLeft": {
@@ -2468,7 +2468,7 @@
         "kind": "Rectangle",
         "extent": {
           "kind": "Point",
-          "x": 101.26988220214844,
+          "x": 101.26968383789062,
           "y": 55.0
         },
         "topLeft": {
@@ -2574,8 +2574,8 @@
                   "kind": "GraphicalFactor",
                   "factor": {
                     "kind": "Factor",
-                    "name": "FSC-A",
-                    "type": "double"
+                    "name": "",
+                    "type": "string"
                   },
                   "rectangle": {
                     "kind": "Rectangle",
@@ -2624,7 +2624,7 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 250342
+          "nRows": 1
         },
         "filters": {
           "kind": "Filters",
