@@ -1,23 +1,23 @@
 {
   "kind": "Workflow",
-  "id": "e01b896d11a4d4031e3270648f637ebf",
+  "id": "6cb476eeed67413abbf51fc96aedaf69",
   "isDeleted": false,
-  "rev": "4-fe0635734feb712d20e356c2e1d7238e",
-  "description": "Performs FlowSOM (cluster n=15) and views the results with a heatmap and MST. 2D plot with tSNE and UMAP. Downsampling applied (1%)",
+  "rev": "3-ca8f9937914cf80fa4006e4cb303129d",
+  "description": "Performs FlowSOM (cluster n=15) and views the results with a heatmap and MST. 2D plot with tSNE and UMAP. Downsampling filter applied (1%). Data should be transformed during FlowJo-Tercen plugin process.",
   "name": "FlowJo Cluster Explorer #2 - Advanced",
-  "createdBy": "maho.nagasawa",
+  "createdBy": "MahoTercen",
   "acl": {
     "kind": "Acl",
-    "owner": "FlowJoTeam",
+    "owner": "FlowJoTest",
     "aces": []
   },
   "createdDate": {
     "kind": "Date",
-    "value": "2022-01-27T10:35:13.004463Z"
+    "value": "2022-02-16T09:42:46.904425Z"
   },
   "lastModifiedDate": {
     "kind": "Date",
-    "value": "2022-02-02T15:57:27.905268Z"
+    "value": "2022-02-16T09:57:21.605309Z"
   },
   "urls": [
     {
@@ -25,7 +25,9 @@
       "uri": "https://github.com/tercen/simple_workflow_tmpl"
     }
   ],
-  "tags": ["flowjo"],
+  "tags": [
+    "flowjo"
+  ],
   "meta": [
     {
       "kind": "Pair",
@@ -35,12 +37,12 @@
   ],
   "url": {
     "kind": "Url",
-    "uri": "https://github.com/tercen/simple_workflow_tmpl"
+    "uri": "https://github.com/tercen/FlowJo_advanced_cluster_explorer_template"
   },
-  "version": "1.0.0",
+  "version": "0.0.4",
   "authors": [],
   "isPublic": false,
-  "projectId": "be91a0de9272c319b41cc6d8305f67fa",
+  "projectId": "2288dd7fd84029a249a58e7256a6b5c5",
   "folderId": "",
   "links": [
     {
@@ -94,8 +96,14 @@
     {
       "kind": "Link",
       "id": "d688552a-50c4-4874-b999-0ee9e4aa1b23",
-      "inputId": "ebda5081-aae4-45fc-b91b-f7b4b19d402a-i-0",
+      "inputId": "270b3460-0e1a-4ef6-9e27-233de88bf8f0-i-0",
       "outputId": "69ea7792-4db9-431b-b2b0-2525dc100f75-o-0"
+    },
+    {
+      "kind": "Link",
+      "id": "4d019bd0-52b6-4e08-b43c-be11dde19aa4",
+      "inputId": "ebda5081-aae4-45fc-b91b-f7b4b19d402a-i-0",
+      "outputId": "270b3460-0e1a-4ef6-9e27-233de88bf8f0-o-0"
     }
   ],
   "steps": [
@@ -103,7 +111,7 @@
       "kind": "TableStep",
       "id": "0396dda7-fae2-4ffd-865b-4cee6a25cb06",
       "groupId": "",
-      "name": "Data set",
+      "name": "Data Set",
       "inputs": [],
       "outputs": [
         {
@@ -122,8 +130,8 @@
         },
         "topLeft": {
           "kind": "Point",
-          "x": 661.5050000000001,
-          "y": 71.5
+          "x": 659.5050000000001,
+          "y": -3.5
         }
       },
       "state": {
@@ -137,7 +145,7 @@
         "kind": "TableStepModel",
         "relation": {
           "kind": "UnionRelation",
-          "id": "52f8151a-2604-433e-9fa8-d9890ad49937",
+          "id": "85be49b9-308b-4f3d-9e4e-ee3afc8b30b4",
           "relations": []
         }
       }
@@ -172,7 +180,7 @@
         },
         "topLeft": {
           "kind": "Point",
-          "x": 662.5050000000001,
+          "x": 660.5050000000001,
           "y": 234.5
         }
       },
@@ -273,7 +281,7 @@
                   "kind": "GraphicalFactor",
                   "factor": {
                     "kind": "Factor",
-                    "name": "value",
+                    "name": "ds.value.mean",
                     "type": "double"
                   },
                   "rectangle": {
@@ -297,7 +305,7 @@
         },
         "columnTable": {
           "kind": "CrosstabTable",
-          "cellSize": 0.2212309203022377,
+          "cellSize": 0.11327023119474572,
           "offset": 0,
           "graphicalFactors": [
             {
@@ -323,31 +331,12 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 2525
+          "nRows": 3989
         },
         "filters": {
           "kind": "Filters",
           "removeNaN": true,
-          "namedFilters": [
-            {
-              "kind": "NamedFilter",
-              "logical": "and",
-              "not": false,
-              "filterExprs": [
-                {
-                  "kind": "FilterExpr",
-                  "filterOp": "less",
-                  "stringValue": "1",
-                  "factor": {
-                    "kind": "Factor",
-                    "name": "ds7.sample",
-                    "type": "double"
-                  }
-                }
-              ],
-              "name": "ds7.sample"
-            }
-          ]
+          "namedFilters": []
         },
         "operatorSettings": {
           "kind": "OperatorSettings",
@@ -356,7 +345,7 @@
             "kind": "OperatorRef",
             "name": "FlowSOM",
             "version": "1.1.2",
-            "operatorId": "be91a0de9272c319b41cc6d8305f79d5",
+            "operatorId": "6cb476eeed67413abbf51fc96ab9b605",
             "operatorKind": "DockerOperator",
             "propertyValues": [
               {
@@ -430,7 +419,7 @@
         },
         "rowTable": {
           "kind": "CrosstabTable",
-          "cellSize": 250.0,
+          "cellSize": 81.92,
           "offset": 0,
           "graphicalFactors": [
             {
@@ -456,20 +445,20 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 9
+          "nRows": 8
         },
         "taskId": ""
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "b660c35f-3efd-481c-a811-1b92fe70648e"
+        "id": "feed3dd3-5cec-4481-aa21-03fe5a998af3"
       }
     },
     {
       "kind": "DataStep",
       "id": "333314cf-0d69-45fc-81fd-03182a58b7a2",
       "groupId": "",
-      "name": "hclust",
+      "name": "Hclust",
       "inputs": [
         {
           "kind": "InputPort",
@@ -541,12 +530,12 @@
                     {
                       "kind": "DoubleColorElement",
                       "color": -1,
-                      "stringValue": "-40.5"
+                      "stringValue": "-86"
                     },
                     {
                       "kind": "DoubleColorElement",
                       "color": -1,
-                      "stringValue": "802.5"
+                      "stringValue": "808"
                     }
                   ]
                 }
@@ -609,7 +598,7 @@
                   "kind": "GraphicalFactor",
                   "factor": {
                     "kind": "Factor",
-                    "name": "value",
+                    "name": "ds.value.mean",
                     "type": "double"
                   },
                   "rectangle": {
@@ -633,7 +622,7 @@
         },
         "columnTable": {
           "kind": "CrosstabTable",
-          "cellSize": 10.995116277760003,
+          "cellSize": 41.94304,
           "offset": 0,
           "graphicalFactors": [
             {
@@ -659,7 +648,7 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 16
+          "nRows": 15
         },
         "filters": {
           "kind": "Filters",
@@ -673,7 +662,7 @@
             "kind": "OperatorRef",
             "name": "hclust",
             "version": "0.10.0",
-            "operatorId": "e3dbbb4b14c59f89887189b7cc2f4c76",
+            "operatorId": "6cb476eeed67413abbf51fc96ab9ca1f",
             "operatorKind": "ROperator",
             "propertyValues": [
               {
@@ -738,13 +727,13 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 9
+          "nRows": 8
         },
         "taskId": ""
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "99a2e025-f0bb-471b-9bba-9af5324e98ed"
+        "id": "e4a697a7-ee92-4aa9-af69-dca28b13f39a"
       }
     },
     {
@@ -772,7 +761,7 @@
         "kind": "Rectangle",
         "extent": {
           "kind": "Point",
-          "x": 109.69761657714844,
+          "x": 109.6978759765625,
           "y": 55.0
         },
         "topLeft": {
@@ -823,12 +812,12 @@
                     {
                       "kind": "DoubleColorElement",
                       "color": -1,
-                      "stringValue": "-40.5"
+                      "stringValue": "-86"
                     },
                     {
                       "kind": "DoubleColorElement",
                       "color": -1,
-                      "stringValue": "802.5"
+                      "stringValue": "808"
                     }
                   ]
                 }
@@ -891,7 +880,7 @@
                   "kind": "GraphicalFactor",
                   "factor": {
                     "kind": "Factor",
-                    "name": "value",
+                    "name": "ds.value.mean",
                     "type": "double"
                   },
                   "rectangle": {
@@ -915,7 +904,7 @@
         },
         "columnTable": {
           "kind": "CrosstabTable",
-          "cellSize": 0.0009353610478917782,
+          "cellSize": 0.07342172114142258,
           "offset": 0,
           "graphicalFactors": [
             {
@@ -971,7 +960,7 @@
                 "kind": "Rectangle",
                 "extent": {
                   "kind": "Point",
-                  "x": 0.0,
+                  "x": 140.0,
                   "y": 30.0
                 },
                 "topLeft": {
@@ -1004,7 +993,7 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 250342
+          "nRows": 3989
         },
         "filters": {
           "kind": "Filters",
@@ -1088,13 +1077,13 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 9
+          "nRows": 8
         },
         "taskId": ""
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "0c09ac27-448d-4c23-826e-a9b8554e2691"
+        "id": "71874894-de9a-4c5b-85f1-6ed6ffd433a5"
       }
     },
     {
@@ -1228,7 +1217,7 @@
                   "kind": "GraphicalFactor",
                   "factor": {
                     "kind": "Factor",
-                    "name": "value",
+                    "name": "ds.value.mean",
                     "type": "double"
                   },
                   "rectangle": {
@@ -1278,7 +1267,7 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 1
+          "nRows": 3989
         },
         "filters": {
           "kind": "Filters",
@@ -1292,7 +1281,7 @@
             "kind": "OperatorRef",
             "name": "FIt-SNE",
             "version": "0.0.4",
-            "operatorId": "be91a0de9272c319b41cc6d83099af5d",
+            "operatorId": "6cb476eeed67413abbf51fc96ab9ee8f",
             "operatorKind": "ROperator",
             "propertyValues": [],
             "url": {
@@ -1341,13 +1330,13 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 1
+          "nRows": 8
         },
         "taskId": ""
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "9501c0e7-ae85-4105-9556-9e99444361f2"
+        "id": "9671ce48-c47e-4778-a08b-45dfe4852a54"
       }
     },
     {
@@ -1375,7 +1364,7 @@
         "kind": "Rectangle",
         "extent": {
           "kind": "Point",
-          "x": 102.6976318359375,
+          "x": 102.69792175292969,
           "y": 55.0
         },
         "topLeft": {
@@ -1487,7 +1476,7 @@
                   "kind": "GraphicalFactor",
                   "factor": {
                     "kind": "Factor",
-                    "name": "value",
+                    "name": "ds.value.mean",
                     "type": "double"
                   },
                   "rectangle": {
@@ -1511,7 +1500,7 @@
         },
         "columnTable": {
           "kind": "CrosstabTable",
-          "cellSize": 0.008711228593176025,
+          "cellSize": 0.10434016036186705,
           "offset": 0,
           "graphicalFactors": [
             {
@@ -1558,7 +1547,7 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 250342
+          "nRows": 3989
         },
         "filters": {
           "kind": "Filters",
@@ -1572,7 +1561,7 @@
             "kind": "OperatorRef",
             "name": "FlowSOM MST",
             "version": "0.1.6",
-            "operatorId": "e3dbbb4b14c59f89887189b7cc2f2d66",
+            "operatorId": "6cb476eeed67413abbf51fc96aba00e2",
             "operatorKind": "DockerWebAppOperator",
             "propertyValues": [],
             "url": {
@@ -1621,13 +1610,13 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 9
+          "nRows": 8
         },
         "taskId": ""
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "a4260268-aa4c-43b3-a6f5-259130a6d52d"
+        "id": "cb588d6d-d18d-459d-a653-81718e2905c7"
       }
     },
     {
@@ -1761,7 +1750,7 @@
                   "kind": "GraphicalFactor",
                   "factor": {
                     "kind": "Factor",
-                    "name": "value",
+                    "name": "ds.value.mean",
                     "type": "double"
                   },
                   "rectangle": {
@@ -1785,7 +1774,7 @@
         },
         "columnTable": {
           "kind": "CrosstabTable",
-          "cellSize": 0.0035681192317649005,
+          "cellSize": 0.06821967254830563,
           "offset": 0,
           "graphicalFactors": [
             {
@@ -1811,7 +1800,7 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 1
+          "nRows": 3989
         },
         "filters": {
           "kind": "Filters",
@@ -1825,7 +1814,7 @@
             "kind": "OperatorRef",
             "name": "umap",
             "version": "0.0.3",
-            "operatorId": "e3dbbb4b14c59f89887189b7cc2f0deb",
+            "operatorId": "2288dd7fd84029a249a58e72560ebe91",
             "operatorKind": "ROperator",
             "propertyValues": [
               {
@@ -1900,13 +1889,13 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 1
+          "nRows": 8
         },
         "taskId": ""
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "863915a7-6410-4a54-99f6-9e07f4ff2b7d"
+        "id": "7ba0af33-5e95-4815-a551-6e908536c50e"
       }
     },
     {
@@ -1934,7 +1923,7 @@
         "kind": "Rectangle",
         "extent": {
           "kind": "Point",
-          "x": 115.81562805175781,
+          "x": 115.81585693359375,
           "y": 55.0
         },
         "topLeft": {
@@ -1986,12 +1975,12 @@
                     {
                       "kind": "DoubleColorElement",
                       "color": -1,
-                      "stringValue": "-40.5"
+                      "stringValue": "-86"
                     },
                     {
                       "kind": "DoubleColorElement",
                       "color": -1,
-                      "stringValue": "802.5"
+                      "stringValue": "808"
                     }
                   ]
                 }
@@ -2104,7 +2093,7 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 1
+          "nRows": 2
         },
         "filters": {
           "kind": "Filters",
@@ -2142,7 +2131,7 @@
         "rowTable": {
           "kind": "CrosstabTable",
           "cellSize": 200.0,
-          "offset": 6,
+          "offset": 0,
           "graphicalFactors": [
             {
               "kind": "GraphicalFactor",
@@ -2167,13 +2156,13 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 9
+          "nRows": 8
         },
         "taskId": ""
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "34b08978-d3af-4c77-a573-071d9817956a"
+        "id": "242f237d-7373-4e71-9153-e664e5aa58d6"
       }
     },
     {
@@ -2201,12 +2190,12 @@
         "kind": "Rectangle",
         "extent": {
           "kind": "Point",
-          "x": 121.91960144042969,
+          "x": 121.91986083984375,
           "y": 55.0
         },
         "topLeft": {
           "kind": "Point",
-          "x": 918.5050000000001,
+          "x": 919.5050000000001,
           "y": 392.5
         }
       },
@@ -2253,12 +2242,12 @@
                     {
                       "kind": "DoubleColorElement",
                       "color": -1,
-                      "stringValue": "-40.5"
+                      "stringValue": "-86"
                     },
                     {
                       "kind": "DoubleColorElement",
                       "color": -1,
-                      "stringValue": "802.5"
+                      "stringValue": "808"
                     }
                   ]
                 }
@@ -2371,7 +2360,7 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 1
+          "nRows": 2
         },
         "filters": {
           "kind": "Filters",
@@ -2409,7 +2398,7 @@
         "rowTable": {
           "kind": "CrosstabTable",
           "cellSize": 250.0,
-          "offset": 7,
+          "offset": 6,
           "graphicalFactors": [
             {
               "kind": "GraphicalFactor",
@@ -2434,20 +2423,20 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 9
+          "nRows": 8
         },
         "taskId": ""
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "3a8b4d9f-aad3-47b3-aaea-b692b741d6ab"
+        "id": "a30c08ce-c46a-4a79-9b35-479d30dcc8ac"
       }
     },
     {
       "kind": "DataStep",
       "id": "69ea7792-4db9-431b-b2b0-2525dc100f75",
       "groupId": "",
-      "name": "Random label",
+      "name": "Random Label",
       "inputs": [
         {
           "kind": "InputPort",
@@ -2468,13 +2457,13 @@
         "kind": "Rectangle",
         "extent": {
           "kind": "Point",
-          "x": 101.26968383789062,
+          "x": 104.50389099121094,
           "y": 55.0
         },
         "topLeft": {
           "kind": "Point",
-          "x": 655.7288568115237,
-          "y": 155.5
+          "x": 654.7288568115237,
+          "y": 76.5
         }
       },
       "state": {
@@ -2638,7 +2627,7 @@
             "kind": "OperatorRef",
             "name": "Random Label",
             "version": "1.0.1",
-            "operatorId": "e3dbbb4b14c59f89887189b7cc2f2195",
+            "operatorId": "2288dd7fd84029a249a58e72560ee3b6",
             "operatorKind": "ROperator",
             "propertyValues": [
               {
@@ -2688,13 +2677,285 @@
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "03d91f9a-929c-4c60-b4dd-4ccc033c990b"
+        "id": "78fed756-7c07-4230-84ee-f09a61ef057f"
+      }
+    },
+    {
+      "kind": "DataStep",
+      "id": "270b3460-0e1a-4ef6-9e27-233de88bf8f0",
+      "groupId": "",
+      "name": "Downsampling Filter",
+      "inputs": [
+        {
+          "kind": "InputPort",
+          "id": "270b3460-0e1a-4ef6-9e27-233de88bf8f0-i-0",
+          "linkType": "relation",
+          "name": "data"
+        }
+      ],
+      "outputs": [
+        {
+          "kind": "OutputPort",
+          "id": "270b3460-0e1a-4ef6-9e27-233de88bf8f0-o-0",
+          "linkType": "relation",
+          "name": "data"
+        }
+      ],
+      "rectangle": {
+        "kind": "Rectangle",
+        "extent": {
+          "kind": "Point",
+          "x": 140.94581604003906,
+          "y": 55.0
+        },
+        "topLeft": {
+          "kind": "Point",
+          "x": 637.5050000000001,
+          "y": 156.5
+        }
+      },
+      "state": {
+        "kind": "StepState",
+        "taskId": "",
+        "taskState": {
+          "kind": "InitState"
+        }
+      },
+      "model": {
+        "kind": "Crosstab",
+        "axis": {
+          "kind": "XYAxisList",
+          "rectangleSelections": [],
+          "xyAxis": [
+            {
+              "kind": "XYAxis",
+              "chart": {
+                "kind": "ChartPoint",
+                "name": "",
+                "properties": {
+                  "kind": "Properties",
+                  "properties": [],
+                  "propertyValues": []
+                },
+                "pointSize": 4
+              },
+              "colors": {
+                "kind": "Colors",
+                "factors": [],
+                "palette": {
+                  "kind": "CategoryPalette",
+                  "backcolor": 0,
+                  "properties": [],
+                  "colorList": {
+                    "kind": "ColorList",
+                    "name": ""
+                  },
+                  "stringColorElements": []
+                }
+              },
+              "errors": {
+                "kind": "Errors",
+                "factors": []
+              },
+              "labels": {
+                "kind": "Labels",
+                "factors": []
+              },
+              "xAxis": {
+                "kind": "Axis",
+                "axisExtent": {
+                  "kind": "Point",
+                  "x": 80.0,
+                  "y": 30.0
+                },
+                "axisSettings": {
+                  "kind": "AxisSettings",
+                  "properties": [],
+                  "propertyValues": []
+                },
+                "graphicalFactor": {
+                  "kind": "GraphicalFactor",
+                  "factor": {
+                    "kind": "Factor",
+                    "name": "",
+                    "type": "string"
+                  },
+                  "rectangle": {
+                    "kind": "Rectangle",
+                    "extent": {
+                      "kind": "Point",
+                      "x": 0.0,
+                      "y": 0.0
+                    },
+                    "topLeft": {
+                      "kind": "Point",
+                      "x": 0.0,
+                      "y": 0.0
+                    }
+                  }
+                }
+              },
+              "yAxis": {
+                "kind": "Axis",
+                "axisExtent": {
+                  "kind": "Point",
+                  "x": 80.0,
+                  "y": 30.0
+                },
+                "axisSettings": {
+                  "kind": "AxisSettings",
+                  "properties": [],
+                  "propertyValues": []
+                },
+                "graphicalFactor": {
+                  "kind": "GraphicalFactor",
+                  "factor": {
+                    "kind": "Factor",
+                    "name": "value",
+                    "type": "double"
+                  },
+                  "rectangle": {
+                    "kind": "Rectangle",
+                    "extent": {
+                      "kind": "Point",
+                      "x": 0.0,
+                      "y": 0.0
+                    },
+                    "topLeft": {
+                      "kind": "Point",
+                      "x": 0.0,
+                      "y": 0.0
+                    }
+                  }
+                }
+              },
+              "taskId": ""
+            }
+          ]
+        },
+        "columnTable": {
+          "kind": "CrosstabTable",
+          "cellSize": 0.2212309203022377,
+          "offset": 0,
+          "graphicalFactors": [
+            {
+              "kind": "GraphicalFactor",
+              "factor": {
+                "kind": "Factor",
+                "name": "rowId",
+                "type": "int32"
+              },
+              "rectangle": {
+                "kind": "Rectangle",
+                "extent": {
+                  "kind": "Point",
+                  "x": 0.0,
+                  "y": 30.0
+                },
+                "topLeft": {
+                  "kind": "Point",
+                  "x": 0.0,
+                  "y": 0.0
+                }
+              }
+            }
+          ],
+          "rectangleSelections": [],
+          "nRows": 1
+        },
+        "filters": {
+          "kind": "Filters",
+          "removeNaN": true,
+          "namedFilters": [
+            {
+              "kind": "NamedFilter",
+              "logical": "and",
+              "not": false,
+              "filterExprs": [
+                {
+                  "kind": "FilterExpr",
+                  "filterOp": "less",
+                  "stringValue": "1",
+                  "factor": {
+                    "kind": "Factor",
+                    "name": "ds7.sample",
+                    "type": "double"
+                  }
+                }
+              ],
+              "name": "ds7.sample"
+            }
+          ]
+        },
+        "operatorSettings": {
+          "kind": "OperatorSettings",
+          "namespace": "ds.value",
+          "operatorRef": {
+            "kind": "OperatorRef",
+            "name": "Mean",
+            "version": "0.12.0",
+            "operatorId": "6cb476eeed67413abbf51fc96aeda640",
+            "operatorKind": "ROperator",
+            "propertyValues": [],
+            "url": {
+              "kind": "Url",
+              "uri": "https://github.com/tercen/mean_operator"
+            }
+          },
+          "environment": [
+            {
+              "kind": "Pair",
+              "key": "cpu",
+              "value": "0"
+            },
+            {
+              "kind": "Pair",
+              "key": "ram",
+              "value": "0"
+            }
+          ]
+        },
+        "rowTable": {
+          "kind": "CrosstabTable",
+          "cellSize": 250.0,
+          "offset": 0,
+          "graphicalFactors": [
+            {
+              "kind": "GraphicalFactor",
+              "factor": {
+                "kind": "Factor",
+                "name": "channel",
+                "type": "string"
+              },
+              "rectangle": {
+                "kind": "Rectangle",
+                "extent": {
+                  "kind": "Point",
+                  "x": 80.0,
+                  "y": 0.0
+                },
+                "topLeft": {
+                  "kind": "Point",
+                  "x": 0.0,
+                  "y": 0.0
+                }
+              }
+            }
+          ],
+          "rectangleSelections": [],
+          "nRows": 1
+        },
+        "taskId": ""
+      },
+      "computedRelation": {
+        "kind": "Relation",
+        "id": "c52a4e61-71dd-4afa-a5e4-eaa0fd74bc38"
       }
     }
   ],
   "offset": {
     "kind": "Point",
-    "x": -24.0,
-    "y": 8.0
+    "x": -27.0,
+    "y": 132.0
   }
 }
