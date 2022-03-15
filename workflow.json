@@ -1,8 +1,8 @@
 {
   "kind": "Workflow",
-  "id": "9be6d831e5bae0f03b78946721f24e44",
+  "id": "d1f2fad1de49d8a289087a6b43d9c10e",
   "isDeleted": false,
-  "rev": "7-dea93b3d1a02dfef7569757890390539",
+  "rev": "3-7f4dbd851cd6c25a1d0f941c4cae259b",
   "description": "Performs FlowSOM (cluster n=15) and views the results with a heatmap and minimum spanning tree (MST). FlowSOM clusters are also visualized in a heatmap using MEM score. 2D plot with Flt-SNE and UMAP. Downsampling filter applied (1%).  For use with FlowJo plugin uploaded data.",
   "name": "FlowJo Cluster Explorer #2 - Advanced",
   "createdBy": "MahoTercen",
@@ -13,11 +13,11 @@
   },
   "createdDate": {
     "kind": "Date",
-    "value": "2022-03-10T21:54:57.345301Z"
+    "value": "2022-03-15T07:44:24.320348Z"
   },
   "lastModifiedDate": {
     "kind": "Date",
-    "value": "2022-03-11T11:37:26.613128Z"
+    "value": "2022-03-15T07:45:16.281220Z"
   },
   "urls": [
     {
@@ -39,7 +39,7 @@
     "kind": "Url",
     "uri": "https://github.com/tercen/FlowJo_advanced_cluster_explorer_template"
   },
-  "version": "0.0.6",
+  "version": "0.0.7",
   "authors": [],
   "isPublic": false,
   "projectId": "2288dd7fd84029a249a58e7256a6b5c5",
@@ -163,7 +163,7 @@
         "kind": "TableStepModel",
         "relation": {
           "kind": "UnionRelation",
-          "id": "f51c24c9-e723-44d3-a68b-4e9ce000df8d",
+          "id": "16cef5ad-9487-4c57-a201-956f4d463bec",
           "relations": []
         }
       }
@@ -469,7 +469,7 @@
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "2ba580c1-69ff-4bb4-9d8e-807ed9413b38"
+        "id": "defdeb4b-01de-4b4b-809b-5387f2d3cdcd"
       }
     },
     {
@@ -777,7 +777,7 @@
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "d062c835-e3ce-42da-a307-06fb7f08ad01"
+        "id": "13035bf4-0778-4657-ac58-848580331aa0"
       }
     },
     {
@@ -1090,7 +1090,7 @@
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "a40516e8-1d9a-4294-a89c-636db7128fb2"
+        "id": "20ad136b-b109-41f0-89bd-8c9626e8183e"
       }
     },
     {
@@ -1343,7 +1343,7 @@
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "cb45bf1d-b50e-4dcd-846f-9378548a0f99"
+        "id": "af960241-c2df-455f-b791-cf14fe3e4aa2"
       }
     },
     {
@@ -1622,7 +1622,7 @@
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "1914e8d6-3933-47a3-9f55-351520c20f87"
+        "id": "71b114c5-8caa-4c5e-88e0-4fb31574a2d4"
       }
     },
     {
@@ -1682,7 +1682,7 @@
                   "properties": [],
                   "propertyValues": []
                 },
-                "pointSize": 1
+                "pointSize": 3
               },
               "colors": {
                 "kind": "Colors",
@@ -1820,7 +1820,7 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 1
+          "nRows": 3
         },
         "filters": {
           "kind": "Filters",
@@ -1883,13 +1883,13 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 1
+          "nRows": 13
         },
         "taskId": ""
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "8397354b-1ef3-483b-97b4-999cf3f4baf6"
+        "id": "f4e4ef36-ae61-4ac3-982e-e1d16487b503"
       }
     },
     {
@@ -1949,7 +1949,7 @@
                   "properties": [],
                   "propertyValues": []
                 },
-                "pointSize": 1
+                "pointSize": 3
               },
               "colors": {
                 "kind": "Colors",
@@ -2148,7 +2148,7 @@
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "ffdd1895-f3ff-419c-af37-b2b67493e74d"
+        "id": "4ecea354-a0bd-4701-af46-337544dae812"
       }
     },
     {
@@ -2422,14 +2422,14 @@
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "76d9bee0-97cc-4b70-80b0-d9f05100419c"
+        "id": "2e3b71bb-9eea-4de1-bf02-24579b86087d"
       }
     },
     {
       "kind": "DataStep",
       "id": "209ff3ab-8fe4-4815-8a07-b388564a632b",
       "groupId": "",
-      "name": "FlowSOM heatmap & MST",
+      "name": "FlowSOM heatmap &MST",
       "inputs": [
         {
           "kind": "InputPort",
@@ -2450,7 +2450,7 @@
         "kind": "Rectangle",
         "extent": {
           "kind": "Point",
-          "x": 169.2118377685547,
+          "x": 166.41184997558594,
           "y": 55.0
         },
         "topLeft": {
@@ -2736,7 +2736,7 @@
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "3896e326-61f6-4a2d-8e6f-da718a29d489"
+        "id": "db9b0ab3-70a6-4ddb-84c9-21cc1fe81a31"
       }
     },
     {
@@ -2984,7 +2984,7 @@
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "91c90431-28a9-46b8-866f-8b8ede9c5d06"
+        "id": "8720b954-e60f-4f66-ba1c-e9ab3af3684f"
       }
     },
     {
@@ -3245,7 +3245,7 @@
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "7d923c9b-32a6-40d7-bd51-702a8c0bcc0a"
+        "id": "d02ee239-61cd-4974-890a-5c4ff43ac950"
       }
     },
     {
@@ -3305,7 +3305,7 @@
                   "properties": [],
                   "propertyValues": []
                 },
-                "pointSize": 1
+                "pointSize": 3
               },
               "colors": {
                 "kind": "Colors",
@@ -3435,7 +3435,7 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 3
+          "nRows": 1
         },
         "filters": {
           "kind": "Filters",
@@ -3504,7 +3504,7 @@
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "5c757248-7c44-4eae-a961-c32bb32141b5"
+        "id": "091cc460-f34c-4306-b72d-3ac5b7cc6f8d"
       }
     },
     {
@@ -3537,8 +3537,8 @@
         },
         "topLeft": {
           "kind": "Point",
-          "x": 1276.505,
-          "y": 414.5
+          "x": 1270.505,
+          "y": 412.5
         }
       },
       "state": {
@@ -3564,7 +3564,7 @@
                   "properties": [],
                   "propertyValues": []
                 },
-                "pointSize": 1
+                "pointSize": 3
               },
               "colors": {
                 "kind": "Colors",
@@ -3771,7 +3771,7 @@
       },
       "computedRelation": {
         "kind": "Relation",
-        "id": "b8684a1c-9afb-4155-8991-2040c99974b8"
+        "id": "04035196-b0f7-4ba0-84ad-2d0ea733280c"
       }
     }
   ],
