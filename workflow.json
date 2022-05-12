@@ -1318,7 +1318,7 @@
             "propertyValues": [],
             "url": {
               "kind": "Url",
-              "uri": "https://github.com/tercen/fast_tSNE_operator"
+              "uri": "https://github.com/tercen/fast_tSNE_deprecated"
             }
           },
           "environment": [
